@@ -1,0 +1,44 @@
+{% extends "admin/change_list.html" %}
+{% load i18n %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}context_admin/stylesheets/context-admin.css" />
+{% endblock %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+      <a href="../../../">
+        {% trans "Home" %}
+      </a>
+       &rsaquo;
+       <a href="../../">
+         {{ app_label|capfirst }}
+      </a>
+      &rsaquo;
+      {{ cl.opts.verbose_name_plural|capfirst }}
+    </div>
+{% endif %}{% endblock %}
+
+
+{% block content %}
+
+	{% if context_inner_model_admin.context_model_admin.inners %}
+	<div id="context-menu">
+
+		<ul>
+
+		{% for inner_model in context_inner_model_admin.context_model_admin.inners %}
+			<li>
+				<a href="{% url admin:inner_changelist_view context_inner_model_admin.parent_id %}">
+					{{ inner_model.opts.verbose_name }}
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+
+
+{{ block.super }}
+{% endblock %}

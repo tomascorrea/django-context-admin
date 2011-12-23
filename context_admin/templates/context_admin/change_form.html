@@ -1,0 +1,32 @@
+{% extends "admin/change_form.html" %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}context_admin/stylesheets/context-admin.css" />
+{% endblock %}
+
+
+{% block content %}
+
+
+	{% if context_model_admin.inners %}
+	<div id="context-menu">
+		<h3>Context menu</h3>
+		<ul>
+
+		{% for inner_model in context_model_admin.inners %}
+			<li>
+				<a href="{% url admin:inner_changelist_view object_id %}">
+					{{ inner_model.opts.verbose_name }}
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+	{% endif %}
+
+
+	
+
+{{ block.super }}
+{% endblock %}

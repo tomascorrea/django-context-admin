@@ -1,0 +1,22 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/tomas\/workspace-pessoal\/django-context-admin\/compass\/src\/context-admin\.sass}line{font-family:\000031}}
+#context-menu {
+  float: left;
+  width: 15%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/tomas\/workspace-pessoal\/django-context-admin\/compass\/src\/context-admin\.sass}line{font-family:\000036}}
+#context-menu ul {
+  list-style-type: none;
+  margin-left: 0.1em;
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/tomas\/workspace-pessoal\/django-context-admin\/compass\/src\/context-admin\.sass}line{font-family:\0000310}}
+#context-menu ul li {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/tomas\/workspace-pessoal\/django-context-admin\/compass\/src\/context-admin\.sass}line{font-family:\0000315}}
+#content-main {
+  float: right;
+  width: 85%;
+}
